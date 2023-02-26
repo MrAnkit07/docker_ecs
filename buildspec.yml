@@ -16,6 +16,6 @@ phases:
    commands:
      - echo build completed on `date`
      - echo pushing build artifact in ECR....
-     - docker push 422040052713.dkr.ecr.ap-south-1.amazonaws.com/ecs_cicd
+     - docker push nginxws:v0.1 422040052713.dkr.ecr.ap-south-1.amazonaws.com/nginx_ecs_cicd 
 
 
