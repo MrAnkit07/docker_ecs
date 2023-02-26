@@ -11,11 +11,11 @@ phases:
      - echo project building on `date`
      - echo building docker image.....
      - docker build -t ws .
-     - docker tag ws 422040052713.dkr.ecr.ap-south-1.amazonaws.com/nginx_ecs_cicd
+     - docker tag ws public.ecr.aws/n7y7m9h7/nginx_ecs_cicd
  post_build: 
    commands:
      - echo build completed on `date`
      - echo pushing build artifact in ECR....
-     - docker push 422040052713.dkr.ecr.ap-south-1.amazonaws.com/nginx_ecs_cicd 
+     - docker push public.ecr.aws/n7y7m9h7/nginx_ecs_cicd 
 
 
