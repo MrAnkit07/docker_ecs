@@ -1,0 +1,21 @@
+version: 0.1
+
+phases:
+ pre_build:
+   commands: 
+     - echo Logging into github repo...
+     - git clone https://github.com/MrAnkit07/docker_ecs.git
+
+ build: 
+   commands: 
+     - echo project building on `date`
+     - echo building docker image.....
+     - docker build -t ws .
+     - docker tag ws nginxws:v0.1
+ post_build: 
+   commands:
+     - echo build completed on `date`
+     - echo pushing build artifact in ECR....
+     - docker push 422040052713.dkr.ecr.ap-south-1.amazonaws.com/ecs_cicd
+
+
