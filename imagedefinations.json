@@ -1,0 +1,8 @@
+imagedefinations.json
+[
+	{ 
+		"name": "nginx_container"
+		"imageUrl": "422040052713.dkr.ecr.ap-south-1.amazonaws.com/nginx_ecs_cicd"
+	}
+
+]
