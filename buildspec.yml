@@ -13,8 +13,8 @@ phases:
    commands: 
      - echo project building on `date`
      - echo building docker image.....
-     - docker build -t nginxws 
-     - docker tag nginxws $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$ECRNAME
+     - docker build -t $ECRNAME 
+     - docker tag $ECRNAME:latest $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$ECRNAME:latest
  post_build: 
    commands:
      - echo build completed on `date`
