@@ -6,7 +6,7 @@ phases:
      - echo Logging into github repo...
      - git clone https://github.com/MrAnkit07/docker_ecs.git
      - echo "Logging in to Amazon ECR..."
-     #-$nginx_esr_cred
+     #-$nginx_ecr_cred
      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 422040052713.dkr.ecr.ap-south-1.amazonaws.com
 
  build: 
