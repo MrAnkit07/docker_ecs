@@ -7,18 +7,18 @@ phases:
      - git clone https://github.com/MrAnkit07/docker_ecs.git
      - echo "Logging in to Amazon ECR..."
      #-$nginx_ecr_cred
-     - aws ecr get-login-password --region $(REGION) | docker login --username AWS --password-stdin $(ACCOUNT_ID).dkr.ecr.$(REGION).amazonaws.com
+     - aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com
 
  build: 
    commands: 
      - echo project building on `date`
      - echo building docker image.....
      - docker build -t nginxWS:$TAG 
-     - docker tag nginxWS $(ACCOUNT_ID).dkr.ecr.$(REGION).amazonaws.com/$(ECRNAME)
+     - docker tag nginxWS $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$ECRNAME
  post_build: 
    commands:
      - echo build completed on `date`
      - echo pushing build artifact in ECR....
-     - docker push $(ACCOUNT_ID).dkr.ecr.ap-south-1.amazonaws.com/$(ECRNAME) 
+     - docker push $ACCOUNT_ID.dkr.ecr.ap-south-1.amazonaws.com/$ECRNAME 
 
 
